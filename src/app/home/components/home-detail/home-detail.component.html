@@ -1,0 +1,50 @@
+<ng-container *ngIf="selectedTabLink$ | async as tab">
+  <ng-container *ngIf="tab === 'hot'">
+    <app-image-slider [sliders]="(imageSliders$ | async)"></app-image-slider>
+    <app-horizontal-grid>
+      <!-- 指令所在的元素叫宿主 -->
+      <div appGridItem *ngFor="let item of (channels$ | async)">
+        <img
+          appGridItemImage="2rem"
+          fitMode="cover"
+          [src]="item.icon"
+          [alt]="item.title"
+        />
+        <span appGridItemTitle="0.6rem">{{ item.title }}</span>
+      </div>
+    </app-horizontal-grid>
+  </ng-container>
+</ng-container>
+
+<div class="ad-container" *ngIf="ad$ | async as ad">
+  <img [src]="ad.imageUrl" alt="" class="ad-image">
+</div>
+
+<app-vertical-grid [itemWidth]="'20rem'" [itemHeight]="'2rem'">
+  <app-product-card
+    *ngFor="let product of products$ | async"
+    [product]="product"
+    [routerLink]="['/products', product.id]"
+  ></app-product-card>
+</app-vertical-grid>
+
+<!-- <a
+  [routerLink]="['grand']"
+  routerLinkActive="active"
+  [queryParams]="{ name: 'haha' }"
+  >link to grand.</a
+>
+<br>
+<a
+  [routerLink]="[{outlets: {second: ['aux']}}]"
+  >link to grand second.</a
+>
+<router-outlet></router-outlet>
+<router-outlet name="second"></router-outlet>
+<br>
+<input type="text" #inputRef>
+<br>
+<app-count-down
+  [startDate]="startDate"
+  [futureDate]="futureDate"
+></app-count-down> -->

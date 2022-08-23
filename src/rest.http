@@ -1,0 +1,18 @@
+@baseUrl = https://jsonplaceholder.typicode.com
+
+GET {{baseUrl}}/posts?id=1 HTTP/1.1
+
+###
+POST {{baseUrl}}/posts HTTP/1.1
+
+{
+  "title": "Rest Client调试HTTP",
+  "body": "测试内容",
+  "userId": 1
+}
+
+###
+GET http://localhost:8090/productVariants.json HTTP/1.1
+
+###
+GET http://localhost:8090/channels.json HTTP/1.1

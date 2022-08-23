@@ -1,0 +1,89 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  flex: 1;
+  overflow-y: auto;
+}
+app-back-button {
+  position: fixed;
+  top: 1.2rem;
+  left: 1rem;
+  z-index: 2000;
+}
+.price-section {
+  flex: 1;
+  overflow-y: auto;
+  display: grid;
+  grid-template-columns: 25% 25% 1fr;
+  place-content: start;
+  place-items: baseline;
+  grid-gap: 5px;
+  margin: 0 5px;
+  .now-price {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: #e02f29;
+  }
+  .list-price {
+    text-decoration: line-through;
+    color: #666;
+  }
+  .sales-count {
+    justify-self: end;
+    color: #333;
+  }
+  .title {
+    grid-column: 1/4;
+    margin: 3px 0;
+    font-weight: bold;
+    font-size: 1.2rem;
+  }
+  .coupon {
+    grid-column: 1/4;
+    span:first-child {
+      margin-right: 5px;
+    }
+  }
+  .guarantee {
+    grid-column: 1/4;
+    margin: 3px 0;
+    color: #a9a9a9;
+    font-size: 0.9rem;
+  }
+}
+.group-short-list {
+  grid-column: 1/4;
+  width: 100%;
+  padding: 0.4rem 0;
+  background-color: #f5f5f5;
+}
+.toolbar {
+  flex-shrink: 0;
+  display: flex;
+  justify-content: space-between;
+  div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .icon-button {
+    font-size: 0.8rem;
+    color: #3f3f3f;
+    flex: 1 1 10%;
+    img {
+      width: 2rem;
+      height: 2rem;
+    }
+  }
+  .direct-buy {
+    background: #e9aeaa;
+    color: #fff;
+    flex: 1 1 28%;
+  }
+  .group-buy {
+    background: #e02f29;
+    color: #fff;
+    flex: 1 1 35%;
+  }
+}

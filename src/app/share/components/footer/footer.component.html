@@ -1,0 +1,16 @@
+<app-horizontal-grid [cols]="5" [dispalyCols]="5">
+  <div appGridItem *ngFor="let item of tabItems; let idx = index">
+    <img
+      appGridItemImage="2rem"
+      fitMode="cover"
+      [src]="idx === selectedIndex ? item.selectedIcon : item.icon"
+      [alt]="item.title"
+      (click)="toggleSelectedTab(idx)"
+    />
+    <span
+      appGridItemTitle="0.6rem"
+      [ngStyle]="{'color': idx === selectedIndex ? '#ff832a' : '#8a8a8a'}"
+      (click)="toggleSelectedTab(idx)"
+    >{{ item.title }}</span>
+  </div>
+</app-horizontal-grid>
